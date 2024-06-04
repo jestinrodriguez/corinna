@@ -14,7 +14,6 @@ const Signup = (props: Props) => {
             <RegistrationFormStep/>
             <ButtonHandler/>
           </div>
-          <HighlightBar />
         </SignUpFormProvider>
       </div>
     </div>
