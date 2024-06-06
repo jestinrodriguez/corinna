@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "next-themes";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
@@ -21,8 +22,14 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={jakarta.className}>
-          {children}
-          <Toaster/>
+          <ThemeProvider
+              attribute="class"
+              defaultTheme="light"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
